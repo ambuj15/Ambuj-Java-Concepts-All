@@ -20,12 +20,14 @@ public abstract class Parent {
     }
 
 // Static and Abstract cannot be together as Static is class level and for abstract method need to be implemented in it's child class
-    //    public static abstract void m3();
+//    public static abstract void m3();
 
-    // Abstract methods cannot be private
-//    private abstract void m4();
+// Abstract methods cannot be private but abstract class can have private methods
+// private abstract void m4(); - Compilation Error
+// private void m5(){} : This will work fine
 
-
+// Abstract class can have static private methods but they should be concrete
+    private static void m6(){}
 }
 
 class Child extends Parent {

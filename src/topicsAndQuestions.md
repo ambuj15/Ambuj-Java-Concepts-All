@@ -818,4 +818,29 @@ Ans : Yes we can but it will not be called from current class as Abstract class 
 
 3. Can we have an Abstract class without even a single abstract method in it?
 Ans : Yes, an abstract class without a single abstract method is possible but it can not be instantiated in this case too but can have constructors.
+
+4. Why we cannot create objects in Abstract class?
+Ans: An abstract class is a class which doesnt have an implementation for one or more methods. It means that the jvm doesnt have any direction of what to do in case if someone calls the method which is abstract. So if you are able to create an object for the abstract class and call any abstract method of it the jvm will not be able to decide what to do and hence it my be crashed. So to avoid this situation we are restricted to instantiate a abstract class. If you need a object for that abstract class create a concrete subclass and create an object for it and use it.
+
+5. Suppose, there is an abstract class but without any abstract method. Can we instantiate it now?
+Ans: No, still it cannot be instantiated.
+
+6. Identify the problem in below code snippet.
+
+a) private class Ambuj{} : Class can never be Private
+b) public static class Ambuj{} : Class can never be static.
+c) public final class Ambuj{} : This is right
+d) public abstract final Ambuj{} : Class can be either final or abstract because if abstract class is made final then it won't get extended further and without extending abstract class nothing can be done on it.
+
+7. In Java-8 interface can have default and static methods along with abstract method then how they are different from abstract class?
+Ans : There are multiple reasons few of them are:
+
+a) With interface one can achieve multiple inheritence but with abstract class it is not possible.
+b) In abstract class you can have constructor which you can use to initialize the global variables through child class but in interface you cannot do it.
+
+8. Can abstract class have private static methods?
+Ans : It depends on situation:
+
+a) **If method is abstract then it cannot be private static** because it will be part of the same class then how we can give body to it.
+b) **If method is concrete then yes it can be private and static both**
 ````

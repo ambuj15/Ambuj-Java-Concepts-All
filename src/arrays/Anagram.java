@@ -1,2 +1,4 @@
-package arrays;public class Anagram {
+package arrays;
+
+public class Anagram {
 }
