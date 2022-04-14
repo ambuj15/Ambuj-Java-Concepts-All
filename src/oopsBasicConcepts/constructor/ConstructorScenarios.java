@@ -1,4 +1,4 @@
-package oopsBasicConcepts;
+package oopsBasicConcepts.constructor;
 
 
 public class ConstructorScenarios {

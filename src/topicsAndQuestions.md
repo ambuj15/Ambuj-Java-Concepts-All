@@ -843,4 +843,9 @@ Ans : It depends on situation:
 
 a) **If method is abstract then it cannot be private static** because it will be part of the same class then how we can give body to it.
 b) **If method is concrete then yes it can be private and static both**
+
+9. What is the difference between isAlphabet and isLetter?
+Ans : Both the methods are of Character class. 
+
+The Unicode character '\u2164' when passed to the isLetter() method returns false. On the other hand, when passed to the isAlphabetic() method, it returns true. The unicode is for V which is 5 in roman and V in English.
 ````
