@@ -808,6 +808,7 @@ I am abstract m1 from child class
 I am m2 which is non-abstract from Parent
 I am m3 which is non-abstract but overided from child
 ````
+
 **Questions:**
 ````
 1. Can we use super and this together?
@@ -848,4 +849,42 @@ b) **If method is concrete then yes it can be private and static both**
 Ans : Both the methods are of Character class. 
 
 The Unicode character '\u2164' when passed to the isLetter() method returns false. On the other hand, when passed to the isAlphabetic() method, it returns true. The unicode is for V which is 5 in roman and V in English.
+
+10. What is Java String?
+Ans: String is a sequence of character.
+
+Note: Why sequence and not group because in group there is no pattern but in sequence there is some pattern.
+
+11. How to print Ascii value in Java?
+Ans : The best and most simple way is to store the Character as Int type and then print it. It will print all the Ascii values.
+
+Eg:
+
+public class PrintingAsciiValues {
+    public static void main(String[] args) {
+        String s = "Ambuj";
+        char[] c = s.toCharArray();
+        for (int i = 0; i < c.length; i++) {
+            System.out.println("Ascii Value of " + c[i] + " is " + (int) (c[i])); // 1st Way of printing by typeCasting char array elements to int type
+        }
+        for (int i : c) {
+            System.out.println(i); // 2nd Way of printing
+        }
+    }
+}
+
+
+// Output :
+
+Ascii Value of A is 65
+Ascii Value of m is 109
+Ascii Value of b is 98
+Ascii Value of u is 117
+Ascii Value of j is 106
+65
+109
+98
+117
+106
+
 ````
