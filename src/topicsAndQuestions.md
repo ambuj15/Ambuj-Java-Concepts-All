@@ -887,4 +887,7 @@ Ascii Value of j is 106
 117
 106
 
+12. How to convert int to string?
+Ans : String.valuOf(int number);
+
 ````
