@@ -279,7 +279,7 @@ class Child extends MethodOverriding {
   
 Weaker -> Stronger
 
-Default -> Private -> Protected -> Public
+Private -> Default -> Protected -> Public
 
 The above phenomenon means that if in Parent class method is default then you can change it to either of Private, Protected or Public but reverse is not possible.
 
@@ -889,5 +889,8 @@ Ascii Value of j is 106
 
 12. How to convert int to string?
 Ans : String.valuOf(int number);
+
+13. How to convert Integer to int?
+Ans : int a = Integer.valueOf(Integer number);
 
 ````

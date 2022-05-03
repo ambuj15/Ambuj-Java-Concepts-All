@@ -10,6 +10,10 @@ public class MethodOverriding {
         System.out.println("Static Method of Parent class");
     }
 
+    private void privateMethod(){                          // As it is private it can never be overriden or even accessed from other class via objects too.
+        System.out.println("I am Private Method of Parent");
+    }
+
 }
 
 class Child extends MethodOverriding {
@@ -24,6 +28,10 @@ class Child extends MethodOverriding {
 
     public static void staticMethod() {
         System.out.println("Static Method of Child class");
+    }
+
+    private void privateMethod(){                          // As it is private it can never be overriden or even accessed from other class via objects too.
+        System.out.println("I am private method in child");
     }
 
     public static void main(String[] args) {
