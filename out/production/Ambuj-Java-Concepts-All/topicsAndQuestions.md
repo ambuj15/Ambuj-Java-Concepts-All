@@ -88,64 +88,12 @@ public class ValueInitialization {
     }
 }
 
-// Output : 
-0
-0
+// Output : 0 0
 // Reason : When we are calling print method by passing amount as an input it will take default value as 0 because if you see in constructor we have provided datatType to the amount variable and hence it will be treated as different entity. To print 1000 which is provided in the constructor follow the following step.
 
-Remove int datatype from amount declared in constructor.
 
 
-package oopsBasicConcepts.constructor;
-
-public class ValueInitialization {
-    int amount;
-
-    public ValueInitialization(){
-        amount = 1000;
-    }
-    public void print(){
-        System.out.println(amount);
-    }
-
-    public static void main(String[] args) {
-        ValueInitialization obj1 = new ValueInitialization();
-        ValueInitialization obj2 = new ValueInitialization();
-        obj2.print();
-        obj1.print();
-    }
-}
-
-// Output :
-1000
-1000
-```
-
-```sh
-Question : What will be the output of the following?
-
-
-package oopsBasicConcepts.constructor;
-
-public class ValueInitialization {
-
-    public ValueInitialization(){
-        int amount = 1000;
-    }
-    public void print(){
-        System.out.println(amount);
-    }
-
-    public static void main(String[] args) {
-        ValueInitialization obj1 = new ValueInitialization();
-        ValueInitialization obj2 = new ValueInitialization();
-        obj2.print();
-        obj1.print();
-    }
-}
-
-// Output : Compilation error as in print method the amount passed cannot refer to the amount mentioned in constructor by any means
-```
+````
 ### Constructor Chaining
 
 It is the process by which you make a call from one constructor to other using **this()** function. This reduces the burden of intantiating different constructors again and again.

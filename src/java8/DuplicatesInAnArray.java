@@ -8,7 +8,9 @@ public class DuplicatesInAnArray {
         Integer a[] = {1,3,4,2,4,5,6,8,1,4,6};
 //        duplicateValuesInArray(a);
         removeDuplicatesFromArray(a);
+
     }
+
 
     private static void duplicateValuesInArray(Integer [] a){
         List<Integer> al = Arrays.asList(a);

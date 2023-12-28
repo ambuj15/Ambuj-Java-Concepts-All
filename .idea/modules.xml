@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Ambuj-Java-Concepts-All.iml" filepath="$PROJECT_DIR$/Ambuj-Java-Concepts-All.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../MyNotesHub/MyNotesHub.iml" filepath="$PROJECT_DIR$/../MyNotesHub/MyNotesHub.iml" />
+      <module fileurl="file://$USER_HOME$/Documents/oauth-cloud-automation/aws_cucumber_automation.iml" filepath="$USER_HOME$/Documents/oauth-cloud-automation/aws_cucumber_automation.iml" />
+    </modules>
+  </component>
+</project>
