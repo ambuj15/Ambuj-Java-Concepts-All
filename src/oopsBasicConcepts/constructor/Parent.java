@@ -28,3 +28,13 @@ class Main {
     }
 
 }
+
+/*
+Output :
+
+1
+2
+3
+
+The reason for this is that when child class constructor is called it by default calls the parent class constructor by internally putting super() keyword.
+*/

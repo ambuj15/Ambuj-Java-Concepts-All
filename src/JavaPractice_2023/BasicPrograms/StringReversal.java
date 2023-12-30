@@ -2,7 +2,6 @@ package JavaPractice_2023.BasicPrograms;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 public class StringReversal {
@@ -44,9 +43,6 @@ public class StringReversal {
             sb.append(inputString.charAt(i));
         }
         String[] reversed = sb.reverse().toString().split(" ");
-        List<String> al = new ArrayList<>();
-        al = Arrays.asList(reversed);
-        List<String> finalAl = al;
         for (int i = reversed.length - 1; i >= 0; i--) {
             finalString = finalString + reversed[i] + " ";
         }

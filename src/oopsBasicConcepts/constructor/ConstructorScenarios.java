@@ -3,6 +3,7 @@ package oopsBasicConcepts.constructor;
 
 public class ConstructorScenarios {
     private static int a;
+
     public ConstructorScenarios() {
         System.out.println("Hello from the constructor");
     }

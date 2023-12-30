@@ -14,6 +14,10 @@ public class MethodOverriding {
         System.out.println("I am Private Method of Parent");
     }
 
+    protected void protectedMethod(){
+        System.out.println("I am protected method of parent class");
+    }
+
 }
 
 class Child extends MethodOverriding {
@@ -32,6 +36,11 @@ class Child extends MethodOverriding {
 
     private void privateMethod(){                          // As it is private it can never be overriden or even accessed from other class via objects too.
         System.out.println("I am private method in child");
+    }
+
+    public void protectedMethod() {
+        System.out.println("I am protected method in child");
+
     }
 
     public static void main(String[] args) {

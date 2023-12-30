@@ -88,12 +88,64 @@ public class ValueInitialization {
     }
 }
 
-// Output : 0 0
+// Output : 
+0
+0
 // Reason : When we are calling print method by passing amount as an input it will take default value as 0 because if you see in constructor we have provided datatType to the amount variable and hence it will be treated as different entity. To print 1000 which is provided in the constructor follow the following step.
 
+Remove int datatype from amount declared in constructor.
 
 
-````
+package oopsBasicConcepts.constructor;
+
+public class ValueInitialization {
+    int amount;
+
+    public ValueInitialization(){
+        amount = 1000;
+    }
+    public void print(){
+        System.out.println(amount);
+    }
+
+    public static void main(String[] args) {
+        ValueInitialization obj1 = new ValueInitialization();
+        ValueInitialization obj2 = new ValueInitialization();
+        obj2.print();
+        obj1.print();
+    }
+}
+
+// Output :
+1000
+1000
+```
+
+```sh
+Question : What will be the output of the following?
+
+
+package oopsBasicConcepts.constructor;
+
+public class ValueInitialization {
+
+    public ValueInitialization(){
+        int amount = 1000;
+    }
+    public void print(){
+        System.out.println(amount);
+    }
+
+    public static void main(String[] args) {
+        ValueInitialization obj1 = new ValueInitialization();
+        ValueInitialization obj2 = new ValueInitialization();
+        obj2.print();
+        obj1.print();
+    }
+}
+
+// Output : Compilation error as in print method the amount passed cannot refer to the amount mentioned in constructor by any means
+```
 ### Constructor Chaining
 
 It is the process by which you make a call from one constructor to other using **this()** function. This reduces the burden of intantiating different constructors again and again.
@@ -843,7 +895,7 @@ I am m3 which is non-abstract but overided from child
 ````
 
 **Questions:**
-````
+```shell
 1. Can we use super and this together?
 Ans : No, because both needs to be the first statement in constructor.
 
@@ -958,7 +1010,172 @@ if(A.compareTo(B)>0){
         // else{
         //     System.out.println("No");
         // }
+        
+        
+16. Can we create a methodName same as that of class/constructor name?
 
+Ans : Yes we can because in method we will have to provide returnType which will help to distinguish it from className or constructor name
+
+package oopsBasicConcepts.constructor;
+
+public class MethodNameSameAsClassConstructorName {
+    public MethodNameSameAsClassConstructorName()
+    {
+        System.out.println("Hello from the constructor");
+    }
+
+    public void MethodNameSameAsClassConstructorName(){
+        System.out.println("Hello from method with name same as that of class or constructor");
+    }
+
+    public static void main(String[] args) {
+        MethodNameSameAsClassConstructorName m1 = new MethodNameSameAsClassConstructorName();
+        m1.MethodNameSameAsClassConstructorName();
+    }
+}
+
+// OUTPUT :
+
+Hello from the constructor
+Hello from method with name same as that of class or constructor
+
+17. What will be the output of the following?
+
+ private static void outputQuestion1(){
+        System.out.println('A' + 'B' + 'C');
+    }
+    
+Ans : 198 (It will sum the ASCII values of A B and C)    
+
+18. What will be the output of the following?
+
+ private static void outputQuestion2(){
+        System.out.println('A'); // Output will be A
+    }
+    
+19. What will be the output of the following?    
+
+ private static void outputQuestion2(){
+        System.out.println('A'+ 1); // Output will be 66 (65 + 1)
+    }
+
+20. What will be the output of the following?
+
+package oopsBasicConcepts.constructor;
+
+public class ConstructorOverloading {
+    ConstructorOverloading(int a) {
+        System.out.println("Hi from parameterized constuctor");
+    }
+
+    public static void main(String[] args) {
+        ConstructorOverloading obj1 = new ConstructorOverloading();
+        ConstructorOverloading obj2 = new ConstructorOverloading(10);
+    }
+}
+
+Answer : This will give compilation error because obj1 is calling default constructor but we have not created it. Java says it will provide default constructor only and only if user is not creating constructor itself.
+
+
+21. What will be the output of the following?
+
+package oopsBasicConcepts.constructor;
+
+public class ConstructorOverloading {
+    private static int x;
+    ConstructorOverloading(int a) {
+        System.out.println("Hi from parameterized constuctor");
+    }
+
+    public static void main(String[] args) {
+        ConstructorOverloading ab = new ConstructorOverloading(10);
+        System.out.println(this.x);
+
+
+    }
+    public void show(){
+        System.out.println(this.x);
+    }
+}
+
+
+Answer : Compilation error
+Reason - We are making a call to instance variable x inside a static function. 'this' cannot be accessed in static function ever because this holds address of latest object and static doesn't need any object to make a call.
+
+But if you make call to x using this keyword in non-static method just like it's done in show. It will work fine.
+
+22 : Can we pass reference of the class as an input of the constructor of the same class?
+
+Answer : YES, we can
+
+Eg:
+
+package oopsBasicConcepts.constructor;
+
+public class PassingClassReferenceInConstructor {
+    int a, b, c;
+
+    public PassingClassReferenceInConstructor(int a, int b, int c) {
+        this.a = a;
+        this.b = b;
+        this.c = c;
+    }
+
+    public PassingClassReferenceInConstructor(PassingClassReferenceInConstructor object1) {
+        a = object1.a;
+        b = object1.b;
+        c = object1.c;
+    }
+
+    public static void main(String[] args) {
+        PassingClassReferenceInConstructor p = new PassingClassReferenceInConstructor(10,20,30);
+        PassingClassReferenceInConstructor p1 = new PassingClassReferenceInConstructor(p);
+        System.out.println(p1.a + p1.b + p1.c);
+    }
+}
+
+// OUTPUT : 60
+
+
+23) What will be the output of the following
+
+
+package oopsBasicConcepts.superFunction;
+
+public class Parent_01 {
+    Parent_01(int a){
+        System.out.println("Hello for the Parent_01 constructor");
+    }
+    public void show(){
+        System.out.println("I am the show method of Parent class");
+    }
+}
+
+class Child_01 extends Parent_01{
+    Child_01(int b){
+        super(10);
+        System.out.println("Hello from the Child_01 constructor");
+    }
+    public void show(){
+        System.out.println("I am the show method of the child class");
+    }
+}
+
+class Test_01{
+    public static void main(String[] args) {
+        Parent_01 c = new Child_01(20);
+        c.show();
+    }
+}
+
+Answer : 
+Hello for the Parent_01 constructor
+Hello from the Child_01 constructor
+I am the show method of the child class
+
+Explaination : In test class we used dynamic binding and created child class constructor using the refernce of the parent class
+Now first constructor of child class got created and it saw super so it goest to parent class constructor and then comes back to it's class constructor
+Now after that it sees a call to show and since object is of child class and hence it will call method of the child only
 =============================Selenium=============================
 
 1. Where in Selenium we are using Static and Dynamic polymorphism?

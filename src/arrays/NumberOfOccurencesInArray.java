@@ -10,8 +10,8 @@ public class NumberOfOccurencesInArray {
 //        numberOfOccurencesOfCharacterInString("MALAYALAM");
 //        numberOfOccurencesOfWordInSentence("I am Ambuj.Ambuj is a good boy");
 //        separatingOand1(new int[]{0, 1, 1, 0, 0, 1});
-        shiftPosition0to1(new int[]{1,0,1,0,0,0,1,1});
-        shiftPosition1to0(new int[]{1,0,1,0,0,0,1,1});
+//        shiftPosition0to1(new int[]{1,0,1,0,0,0,1,1});
+//        shiftPosition1to0(new int[]{1,0,1,0,0,0,1,1});
 
 
     }
